@@ -48,8 +48,8 @@ public class VariableNamesTheme {
         System.out.println("тип сообщения: " + messageType);
 
         // число нулей
-        int nullCounter = 2;
-        System.out.println("число нулей: " + nullCounter);
+        int zerosCounter = 2;
+        System.out.println("число нулей: " + zerosCounter);
 
         // уникальное число
         int uniqueNumber = 999;
@@ -92,8 +92,8 @@ public class VariableNamesTheme {
         System.out.println("окончание диапазона: " + endRange);
 
         // полное имя работника месяца
-        String fullNameEmployeeOfTheMonth = "Тестовый Тест Тестович";
-        System.out.println("полное имя работника месяца: " + fullNameEmployeeOfTheMonth);
+        String fullNameEmployeeMonth = "Тестовый Тест Тестович";
+        System.out.println("полное имя работника месяца: " + fullNameEmployeeMonth);
 
         // заголовок электронной книги
         String ebookTitle = "Это заголовок";
@@ -115,17 +115,16 @@ public class VariableNamesTheme {
         String filePath = "../../test.txt";
         System.out.println("путь до файла: " + filePath);
 
-        //количество чисел в каждой строке
+        // количество чисел в каждой строке
         int stringCharCount = 100;
         System.out.println("количество чисел в каждой строке: " + stringCharCount + "\n");
-
 
         // 2 boolean-переменные
         System.out.println("2. boolean-переменные");
 
         // сотни равны?
-        boolean isEqualHundred = false;
-        System.out.println("сотни равны: " + isEqualHundred);
+        boolean isEqualHundreds = false;
+        System.out.println("сотни равны: " + isEqualHundreds);
 
         // компьютер включен?
         boolean isTurnedOnComputer = true;
@@ -136,8 +135,8 @@ public class VariableNamesTheme {
         System.out.println("есть равные цифры: " + hasEqualDigits);
 
         // создано?
-        boolean create = false;
-        System.out.println("создано: " + create);
+        boolean created = false;
+        System.out.println("создано: " + created);
 
         // пустое?
         boolean empty = false;
@@ -159,7 +158,6 @@ public class VariableNamesTheme {
         boolean hasUniqueString = true;
         System.out.println("имеются уникальные строки: " + hasUniqueString + "\n");
 
-
         // 3 Аббревиатуры 
         System.out.println("3. Аббревиатуры");
 
@@ -180,12 +178,12 @@ public class VariableNamesTheme {
         System.out.println("протокол передачи гипертекста: " + http);
 
         // сокращенный uniform resource locator
-        String url = "URL";
-        System.out.println("сокращенный uniform resource locator: " + url);
+        String shortUrl = "URL";
+        System.out.println("сокращенный uniform resource locator: " + shortUrl);
 
         // новый идентификатор клиента
-        int newUserId = 159;
-        System.out.println("новый идентификатор клиента: " + newUserId);
+        int newCid = 159;
+        System.out.println("новый идентификатор клиента: " + newCid);
 
         // кодировка american standard code for information interchange
         String ascii = "ASCII";
