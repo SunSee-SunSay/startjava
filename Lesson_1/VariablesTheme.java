@@ -14,12 +14,12 @@ public class VariablesTheme {
         double versionOs = 12.2;
         long gpuCount = 1536;
 
-        System.out.println("Компьютер ("+ hasPc +") " + pcConstructionYear + " года выпуска. \n" +
-            cpuCoreCount + "-ядерный процессор Intel Core " + integrated + "5\n" +
-            cpuClockSpeed + "GHz - тактовая частота процессора\n" +
-            ramCount + "ГБ оперативной памяти\n" +
-            versionOs + " версия macOS Monterey\n" +
-            gpuCount + "МБ объем видеопамяти\n");
+        System.out.println("Компьютер (" + hasPc + ") " + pcConstructionYear + " года выпуска. \n" +
+                cpuCoreCount + "-ядерный процессор Intel Core " + integrated + "5\n" +
+                cpuClockSpeed + "GHz - тактовая частота процессора\n" +
+                ramCount + "ГБ оперативной памяти\n" +
+                versionOs + " версия macOS Monterey\n" +
+                gpuCount + "МБ объем видеопамяти\n");
 
         // 2 Расчет стоимости товара со скидкой
         System.out.println("2 Расчет стоимости товара со скидкой");
@@ -47,12 +47,12 @@ public class VariablesTheme {
         byte maxByte = 127;
         short maxShort = 32767;
         int maxInt = 2147483647;
-        long maxLong = 9223372036854775807l;
+        long maxLong = 9223372036854775807L;
 
-        System.out.println(maxByte + " : " + maxByte++ + " : " + maxByte--);
-        System.out.println(maxShort + " : " + maxShort++ + " : " + maxShort--);
-        System.out.println(maxInt + " : " + maxInt++ + " : " + maxInt--);
-        System.out.println(maxLong + " : " + maxLong++ + " : " + maxLong--);
+        System.out.println(maxByte + " : " + ++maxByte  + " : " + --maxByte);
+        System.out.println(maxShort + " : " + ++maxShort + " : " + --maxShort);
+        System.out.println(maxInt + " : " + ++maxInt + " : " + --maxInt);
+        System.out.println(maxLong + " : " + ++maxLong + " : " + --maxLong);
 
         // 5 Перестановка значений переменных
         System.out.println("\n5 Перестановка значений переменных");
@@ -79,7 +79,7 @@ public class VariablesTheme {
         System.out.println("Исходные значения num1 = " + num1 + ", num2 = " + num2);
 
         num1 ^= num2;
-        num2 = num1 ^ num2;
+        num2 ^= num1;
         num1 ^= num2;
 
         System.out.println("Полученные значения num1 = " + num1 + ", num2 = " + num2 + "\n");
@@ -111,22 +111,21 @@ public class VariablesTheme {
         System.out.println("     " + slash + underscore + openBracket + " " + closeBracket + backslash);
         System.out.println("    " + slash + "      " + backslash);
         System.out.println("   " + slash + underscore + underscore + underscore + underscore + slash +
-            backslash + underscore + underscore + backslash + "\n");
+                backslash + underscore + underscore + backslash + "\n");
 
         // 8 Вывод количества сотен, десятков и единиц числа
         System.out.println("8 Вывод количества сотен, десятков и единиц числа");
         int number = 123;
         int hundreds = number / 100;
-        int remainder = number % 100;
-        int tens = remainder / 10;
-        int units = remainder % 10;
+        int tens = number % 100 / 10;
+        int ones = number % 10;
 
         System.out.println("Число " + number + " содержит: ");
         System.out.println("сотен - " + hundreds);
         System.out.println("десятков - " + tens);
-        System.out.println("единиц - " + units);
-        System.out.println("Сумма его цифр: " + (hundreds + tens + units));
-        System.out.println("Произведение: " + (hundreds * tens * units));
+        System.out.println("единиц - " + ones);
+        System.out.println("Сумма его цифр: " + (hundreds + tens + ones));
+        System.out.println("Произведение: " + (hundreds * tens * ones));
 
         // 9 Вывод времени
         System.out.println("\n9 Вывод времени");
