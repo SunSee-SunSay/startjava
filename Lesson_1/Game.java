@@ -10,7 +10,7 @@ public class Game {
             guessNumber = (low + high) / 2;
 
             if (guessNumber == secretNumber) {
-                System.out.println("Число угадано! " + guessNumber);
+                System.out.println("Вы победили! " + guessNumber);
                 break;
             } else if (guessNumber < secretNumber) {
                 System.out.println(guessNumber + " меньше того, что загадал компьютер");
