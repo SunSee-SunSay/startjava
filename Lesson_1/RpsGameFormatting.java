@@ -1,5 +1,5 @@
-import java.util.Random;
 import java.lang.Thread;
+import java.util.Random;
 
 public class RpsGameFormatting {
     public static void main(String[] args) throws InterruptedException {
@@ -34,7 +34,7 @@ public class RpsGameFormatting {
 
         // Ход второго игрока
         String name2 = "WALLE";
-        int position2 = random.nextInt (1, 100);
+        int position2 = random.nextInt(1, 100);
         String sign2 = rock;
 
         if (position2 > 66) {
