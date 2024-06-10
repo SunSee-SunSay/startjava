@@ -3,16 +3,13 @@ public class GuessNumber {
         int low = 1;
         int high = 100;
         int secretNumber = low + (int) (Math.random() * (high - low) + 1);
-        int guessNumber;
+        int guessNumber = (low + high) / 2;
 
         System.out.println(secretNumber);
-        while (true) {
+        while (guessNumber != secretNumber) {
             guessNumber = (low + high) / 2;
 
-            if (guessNumber == secretNumber) {
-                System.out.println("Вы победили! " + guessNumber);
-                break;
-            } else if (guessNumber < secretNumber) {
+            if (guessNumber < secretNumber) {
                 System.out.println(guessNumber + " меньше того, что загадал компьютер");
                 low = guessNumber + 1;
             } else {
@@ -20,5 +17,7 @@ public class GuessNumber {
                 high = guessNumber - 1;
             }
         }
+
+        System.out.println("Вы победили! " + guessNumber);
     }
 }
