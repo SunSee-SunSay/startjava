@@ -1,4 +1,4 @@
-public class Game {
+public class GuessNumber {
     public static void main(String[] args) {
         int low = 1;
         int high = 100;
