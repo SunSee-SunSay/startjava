@@ -18,8 +18,7 @@ public class CyclesTheme {
             num++;
         } while (num <= upperBound);
 
-        System.out.println("Сумма четных чисел: " + sumEven);
-        System.out.println("Сумма нечетных чисел: " + sumOdd);
+        System.out.println("В отрезке [" + lowerBound + ", " + upperBound + "] сумма четных чисел = " + sumEven + ", а нечетных = " + sumOdd);
 
         // 2 Вывод чисел в порядке убывания
         System.out.println("\n2 Вывод чисел в порядке убывания");
@@ -55,41 +54,46 @@ public class CyclesTheme {
         int sum = 0;
         String reversedNumber = "";
 
-        while (number != 0) {
+        while (number > 0) {
             int digit = number % 10;
             sum += digit;
-            reversedNumber += digit + " ";
-            number = number / 10;
+            reversedNumber += digit;
+            number /= 10;
         }
 
-        System.out.println(sum);
-        System.out.println(reversedNumber);
+        System.out.println("Сумма чисел: " + sum);
+        System.out.println("Вывод реверсивного числа: " + reversedNumber);
 
         // 4 Вывод чисел в несколько строк
         System.out.println("\n4 Вывод чисел в несколько строк");
-        int limit = 24;
+        upperBound = 24;
         int count = 0;
 
-        for (int i = 1; i < limit; i++) {
+        for (int i = 1; i < upperBound; i++) {
+            if (i % 2 == 0) {
+                continue;
+            }
+
             System.out.printf("%5d", i);
             count++;
 
             if (count == 5) {
                 System.out.println();
                 count = 0;
-            } 
+            }
+        }
 
-            if (count != 5 && i == limit - 1) {
-                for (int j = 1; j <= 5 - count; j++) {
-                    System.out.printf("%5d", 0);
-                } 
+        if (count > 0) {
+            for (int j = 1; j <= 5 - count; j++) {
+                System.out.printf("%5d", 0);
             }
         }
 
         // 5 Проверка количества двоек числа на четность/нечетность
         System.out.println("\n\n5 Проверка количества двоек числа на четность/нечетность");
         number = 3242592;
-        String state = "В " + number + " ";
+        int numberCopy = 3242592;
+        String state = "нечетное";
         int counter = 0;
 
         while (number != 0) {
@@ -102,12 +106,9 @@ public class CyclesTheme {
 
         if (counter % 2 == 0) {
             state += "четное";
-        } else {
-            state += "нечетное";
         }
 
-        state += " (" + counter + ") количество двоек";
-        System.out.println(state + "\n");
+        System.out.println("В " + numberCopy + " " + state + " (" + counter + ") количество двоек\n");
 
         // 6 Вывод геометрических фигур
         System.out.println("6 Вывод геометрических фигур");
@@ -163,7 +164,7 @@ public class CyclesTheme {
         } while (i <= length);
 
         // 7 Вывод ASCII-символов
-        System.out.println("\n7 Вывод ASCII-символов");
+        System.out.println("\n\n7 Вывод ASCII-символов");
         System.out.printf("%-13s", "DECIMAL");
         System.out.printf("%-15s", "CHARACTER");
         System.out.print("DESCRIPTION");

@@ -77,9 +77,6 @@ public class IfElseStatementTheme {
         int num2 = 128;
         int num1Hundreds = num1 / 100;
         int num2Hundreds = num2 / 100;
-        int num1Tens = num1 % 100 / 10;
-        int num2Tens = num2 % 100 / 10;
-
         boolean hasEqualDigits = false;
         String equalDigits = "";
         String rank = "";
@@ -91,6 +88,8 @@ public class IfElseStatementTheme {
             rank += "3 ";
         }
 
+        int num1Tens = num1 % 100 / 10;
+        int num2Tens = num2 % 100 / 10;
         int num1Ones = num1 % 10;
         int num2Ones = num2 % 10;
 
@@ -130,19 +129,21 @@ public class IfElseStatementTheme {
         // 6 Подсчет суммы вклада и начисленных банком %
         System.out.println("6 Подсчет суммы вклада и начисленных банком %");
         BigDecimal depositSum = new BigDecimal("321123.59");
-        BigDecimal depositAmount1 = new BigDecimal("100000");
-        BigDecimal depositAmount2 = new BigDecimal("300000");
         BigDecimal percent = new BigDecimal("5");
 
-        if (depositSum.compareTo(depositAmount1) >= 0 && depositSum.compareTo(depositAmount2) < 0) {
+        if (depositSum.compareTo(BigDecimal.valueOf(100000)) >= 0 && depositSum.compareTo(new BigDecimal("300000")) < 0) {
             percent = new BigDecimal("7");
-        } else if (depositSum.compareTo(depositAmount3) >= 0) {
+        } else if (depositSum.compareTo(BigDecimal.valueOf(300000)) >= 0) {
             percent = new BigDecimal("10");
         }
 
         BigDecimal percentSum = (percent.divide(new BigDecimal("100"), 2, RoundingMode.HALF_UP))
-                .multiply(depositSum).setScale(2, RoundingMode.HALF_UP);
-        BigDecimal totalDepositSum = depositSum.add(percentSum).setScale(2, RoundingMode.HALF_UP);
+                .multiply(depositSum)
+                .setScale(2, RoundingMode.HALF_UP);
+
+        BigDecimal totalDepositSum = depositSum
+                .add(percentSum)
+                .setScale(2, RoundingMode.HALF_UP);
 
         System.out.println("сумма вклада " + depositSum);
         System.out.println("сумма начисленного % " + percentSum);
@@ -152,7 +153,7 @@ public class IfElseStatementTheme {
         System.out.println("\n7 Определение оценки по предметам");
 
         int historyPercent = 59;
-        int historyGrade = 0;
+        int historyGrade = 5;
 
         if (historyPercent <= 60) {
             historyGrade = 2;
@@ -160,12 +161,10 @@ public class IfElseStatementTheme {
             historyGrade = 3;
         } else if (historyPercent <= 91) {
             historyGrade = 4;
-        } else {
-            historyGrade = 5;
         }
 
         int programmingPercent = 92;
-        int programmingGrade = 0;
+        int programmingGrade = 5;
         
         if (programmingPercent <= 60) {
             programmingGrade = 2;
@@ -173,14 +172,10 @@ public class IfElseStatementTheme {
             programmingGrade = 3;
         } else if (programmingPercent <= 91) {
             programmingGrade = 4;
-        } else {
-            programmingGrade = 5;
         }
 
-        float averageGrade = 0f;
-        float averagePercent = 0f;
-        averageGrade = (float) (historyGrade + programmingGrade) / 2;
-        averagePercent = (float) (historyPercent + programmingPercent) / 2;
+        float averageGrade = (float) (historyGrade + programmingGrade) / 2;
+        float averagePercent = (float) (historyPercent + programmingPercent) / 2;
 
         System.out.println("История: " + historyGrade);
         System.out.println("Программирование: " + programmingGrade);
@@ -189,14 +184,13 @@ public class IfElseStatementTheme {
 
         // 8 Расчет годовой прибыли
         System.out.println("\n8 Расчет годовой прибыли");
-        
+
         BigDecimal monthSelling = new BigDecimal("13025.233");
         BigDecimal monthRent = new BigDecimal("5123.018");
         BigDecimal montCostPrice = new BigDecimal("9001.729");
 
-        BigDecimal monthlyProfit = (monthSelling.subtract((monthRent.add(montCostPrice))))
-                    .setScale(2, RoundingMode.HALF_UP);
-        BigDecimal yearlyProfit = (monthlyProfit.multiply(new BigDecimal("12")))
+        BigDecimal monthlyProfit = monthSelling.subtract((monthRent.add(montCostPrice)));
+        BigDecimal yearlyProfit = (monthlyProfit.multiply(BigDecimal.valueOf(12)))
                     .setScale(2, RoundingMode.HALF_UP);
 
         if (yearlyProfit.compareTo(BigDecimal.ZERO) <= 0) {
