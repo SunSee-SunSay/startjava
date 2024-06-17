@@ -32,6 +32,7 @@ public class Calculator {
             }
         } else {
             System.out.println("Введите корректный символ операции из доступных: +, -, *, /, ^, %");
+            return;
         }
 
         System.out.println(number1 + " " + sign + " " + number2 + " = " + result);
