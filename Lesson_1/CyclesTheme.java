@@ -18,8 +18,8 @@ public class CyclesTheme {
             counter++;
         } while (counter <= upperBound);
 
-        System.out.println("В отрезке [" + lowerBound + ", " + upperBound + "] сумма четных чисел = "
-             + sumEven + ", а нечетных = " + sumOdd);
+        System.out.println("В отрезке [" + lowerBound + ", " + upperBound + "] сумма четных чисел = " +
+                sumEven + ", а нечетных = " + sumOdd);
 
         // 2 Вывод чисел в порядке убывания
         System.out.println("\n2 Вывод чисел в порядке убывания");
@@ -182,7 +182,7 @@ public class CyclesTheme {
 
         while (number != 0) {
             reverseNumber = reverseNumber * 10 + (number % 10);
-            number  /= 10;
+            number /= 10;
         }
 
         if (numberCopy == reverseNumber) {
@@ -218,7 +218,7 @@ public class CyclesTheme {
             System.out.println(state + "обычное");
         }
 
-        System.out.println("Сумма цифр " + numberCopy / 1000+ " = " + sumFirstHalf);
+        System.out.println("Сумма цифр " + numberCopy / 1000 + " = " + sumFirstHalf);
         System.out.println("Сумма " + numberCopy % 1000 + " = " + sumSecondHalf);
 
         // 10 Вывод таблицы умножения Пифагора
