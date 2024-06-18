@@ -118,63 +118,63 @@ public class CyclesTheme {
 
         System.out.println();
         int rows = 5;
-        int i = 1;
-        int j = 1;
+        int indexI = 1;
+        int indexJ = 1;
 
-        while (i <= rows) {
+        while (indexI <= rows) {
             System.out.print("# ");
-            if (j == rows) {
+            if (indexJ == rows) {
                 System.out.println();
-                j = rows - (rows - i);
-                i++;
+                indexJ = rows - (rows - indexI);
+                indexI++;
             }
-            j++;
+            indexJ++;
         }
 
         System.out.println();
         int length = 5;
-        i = 1;
-        j = 1;
+        indexI = 1;
+        indexJ = 1;
 
         do {
             System.out.println("*");
             // по условию начинается отрисовка в обратную сторону
-            if (i == length && length != 2) {
+            if (indexI == length && length != 2) {
                 length -= 1;
-                i = length;
+                indexI = length;
             } else {
-                i++;
+                indexI++;
             }
 
-            j = 1;
+            indexJ = 1;
 
             do {
                 System.out.print("* ");
-                j++;
+                indexJ++;
                 if (length == 2) {
                     break;
                 }
-            } while (j < i);
-        } while (i <= length);
+            } while (indexJ < indexI);
+        } while (indexI <= length);
 
         // 7 Вывод ASCII-символов
         System.out.println("\n\n7 Вывод ASCII-символов");
         System.out.printf("%-13s %-15s %s\n", "DECIMAL", "CHARACTER", "DESCRIPTION");
 
-        for (i = 33; i <= 57; i++) {
+        for (int i = 33; i <= 57; i++) {
             if (i % 2 != 0) {
-                System.out.printf("%4d %14c               %s\n", i, i, Character.getName(i));
+                System.out.printf("%n  %-16d%-16c%s", i, i, Character.getName(i));
             }
         }
 
-        for (i = 97; i <= 122; i++) {
+        for (int i = 97; i <= 122; i++) {
             if (i % 2 == 0) {
-                System.out.printf("%4d %14c               %s\n", i, i, Character.getName(i));
+                System.out.printf("%n  %-16d%-16c%s", i, i, Character.getName(i));
             }
         }
 
         // 8 Проверка, является ли число палиндромом
-        System.out.println("\n8 Проверка, является ли число палиндромом");
+        System.out.println("\n\n8 Проверка, является ли число палиндромом");
 
         number = 1234321;
         numberCopy = number;
@@ -200,7 +200,7 @@ public class CyclesTheme {
         int sumSecondHalf = 0;
         state = "Число " + number;
 
-        for (i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++) {
             int digit = number % 10;
 
             if (i < 3) {
@@ -224,12 +224,12 @@ public class CyclesTheme {
         // 10 Вывод таблицы умножения Пифагора
         System.out.println("\n10 Вывод таблицы умножения Пифагора");
 
-        System.out.println("      2  3  4  5  6  7  8  9");
+        System.out.println("    |  2  3  4  5  6  7  8  9");
         System.out.println("  ---  -  -  -  -  -  -  -  -");
 
-        for (i = 2; i <= 9; i++) {
+        for (int i = 2; i <= 9; i++) {
             System.out.printf("%3d", i);
-            for (j = 2; j <= 9; j++) {
+            for (int j = 2; j <= 9; j++) {
                 if (j == 2) {
                     System.out.printf("%2s", "|");
                 }
